@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciamento de Funcionários</title>
+
+    
+
+    <!-- Inclua seus arquivos CSS e JavaScript aqui -->
+    <link rel="stylesheet" type="text/css" href="STYLE.CSS">
+    <script src="SCRIPT.JS"></script>
+
+
+
+</head>
+<body>
+    <h1>Funcionários Cadastrados</h1>
+    
+    <!-- Formulário para adicionar funcionários -->
+    <form id="employeeForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+        
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" required>
+        
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" required>
+        
+        <button type="button" onclick="addEmployee()">Adicionar Funcionário</button>
+    </form>
+
+    <!-- Contêiner para exibir funcionários -->
+    <div id="employeeList">
+        <!-- Funcionários serão adicionados aqui -->
+    </div>
+
+    <script src="SCRIPT.JS"></script>
+</body>
+</html>

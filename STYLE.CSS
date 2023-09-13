@@ -1,0 +1,35 @@
+/* Estilo para os funcionários */
+.employee {
+    background-color: rgb(115, 9, 214);
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 13rem;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.employee:hover {
+    background-color: #6a0dad; /* Cor de destaque ao passar o mouse */
+}
+
+/* Estilo para os detalhes do funcionário (inicialmente ocultos) */
+.employee-details {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4b0082; /* Cor de fundo mais escura para os detalhes */
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* Estilize o texto dentro do container de detalhes */
+.employee-details p {
+    margin: 5px 0;
+    color: rgb(255, 255, 255);
+    
+}
