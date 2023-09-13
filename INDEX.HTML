@@ -1,39 +1,164 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Gerenciamento de Funcionários</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Func_cad-ADM.css">
+    <script src="Fun_cad-ADM.js"></script>
 
-    <!-- Inclua seus arquivos CSS e JavaScript aqui -->
-    <link rel="stylesheet" type="text/css" href="STYLE.CSS">
-    <script src="SCRIPT.JS"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://font.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Leckerli+One&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
+
 <body>
-    <h1>Funcionários Cadastrados</h1>
+
+    <!---Logo e Navbar--->
+    <header>
+        <a href="#" class="logo.img">
+            <img src="img/logo.png">
+        </a>
+
+        <ul class="navbar">
+            <li><a href="/Home/Home.html">Home-sair</a></li>
+            <li><a href="/Home/Home.html">Sobre nós-sair</a></li>
+            <li><a href="/Catalogo/catalog.html">QUERO ADOTAR-sair</a></li>
+            <li><a href="/Doar/Doar.html">Ajude a ONG-sair</a></li>
+
+
+        </ul>
+    </header>
+
+
+
+
+    <!---funcionarios titulo--->
+    <section class="funcionarios">
+        <div class="center-text" id="funcionarios">
+
+            
+        
+
+        <div class="new-content">
+            <div class="row">
+                <h2>Funcionarios cadastrados</h3>
+                <h4>Clique no funcionario para ver mais detalhes</h4>
+
     
     <!-- Formulário para adicionar funcionários -->
+
+<!-- Campo de busca -->
+<label for="search">Buscar por nome:</label>
+<input type="text" id="search" oninput="buscarFuncionario()">
+
+<div class="campos">
     <form id="employeeForm">
         <label for="name">Nome:</label>
         <input type="text" id="name" required>
-        
+
         <label for="cpf">CPF:</label>
         <input type="text" id="cpf" required>
-        
+
         <label for="cargo">Cargo:</label>
         <input type="text" id="cargo" required>
-        
+
         <button type="button" onclick="addEmployee()">Adicionar Funcionário</button>
     </form>
+</div>
 
-    <!-- Contêiner para exibir funcionários -->
+<!-- Contêiner para exibir funcionários -->
+<div class="containerTodos">
     <div id="employeeList">
-        <!-- Funcionários serão adicionados aqui -->
+    </div>
+</div>
+
+
+
+    </div>
+</div>
+
+                
+            </section>
+
+            <script src="Fun_cad-ADM.js"></script>
+
+    
+            
+
+
+            
+    
+
+                
+
+
+
+
+    <!---Rodapé--->
+    <section class="contact">
+        <div class="contact-box">
+            <h4>INSTITUCIONAL</h4>
+            <li><a href="#top">Sobre a DOTPET</a></li>
+            <li><a href="#">Nosso intuito</a></li>
+        </div>
+
+        <div class="contact-box">
+            <h4>NOSSAS POLÍTICAS</h4>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">Termos de contrato</a></li>
+        </div>
+
+        <div class="contact-box">
+            <h4>ATENDIMENTO DOTPET</h4>
+            <li><a href="#">Fale conosco</a></li>
+            <li><a href="#">Ouvidoria: 55+ 11xxxx-xxxx</a></li>
+            <li><a href="#">Email: dotpet@xxxx.com</a></li>
+        </div>
+
+        <div class="contact-box">
+            <h4>BAIXE NOSSO APP</h4>
+            <a href="#" class="app">
+                <img src="img/qr.jpg">
+        </div>
+
+        <div class="contact-box">
+            <h4>DOTPET</h4>
+            <h5>Nossas redes sociais:</h5>
+            <div class="social">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!---scroll--->
+    <a href="#" class="scroll-top"><i class='bx bx-chevrons-up'></i></a>
+
+    <div class="end-text">
+        <a href="/Home/Home.html">SAIR -</a>
+        
+        <a href="/Perfil-ADM/perfil-adm.html">MEU PERFIL</a>
     </div>
 
-    <script src="SCRIPT.JS"></script>
+
+
+
+
+
+
 </body>
+
 </html>
