@@ -1,5 +1,7 @@
-// Array para armazenar os funcionários
-const employees = [];
+// Verifica se a variável 'employees' já está definida antes de declará-la
+if (!employees) {
+    var employees = [];
+}
 
 function addEmployee() {
     const name = document.getElementById("name").value;
@@ -23,17 +25,17 @@ function addEmployee() {
         document.getElementById("cargo").value = "";
 
         // Atualiza a lista de funcionários
-        displayEmployees();
+        displayEmployees(employees); // Passa o array de funcionários para a função
     } else {
         alert("Por favor, preencha todos os campos do formulário.");
     }
 }
 
-function displayEmployees() {
+function displayEmployees(employeesToDisplay) {
     const employeeList = document.getElementById("employeeList");
     employeeList.innerHTML = ""; // Limpa a lista antes de atualizar
 
-    employees.forEach((employee, index) => {
+    employeesToDisplay.forEach((employee, index) => {
         const employeeDiv = document.createElement("div");
         employeeDiv.className = "employee";
 
@@ -43,6 +45,14 @@ function displayEmployees() {
         employeeTitle.addEventListener("click", () => {
             toggleEmployeeDetails(index);
         });
+
+        // Botão de Excluir
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Excluir";
+        deleteButton.className = "btn-excluir";
+        deleteButton.onclick = function () {
+            excluirFuncionario(deleteButton);
+        };
 
         // Container para detalhes do funcionário (inicialmente oculto)
         const detailsDiv = document.createElement("div");
@@ -60,6 +70,7 @@ function displayEmployees() {
         detailsDiv.appendChild(cpfLabel);
         detailsDiv.appendChild(cargoLabel);
 
+        employeeDiv.appendChild(deleteButton);
         employeeDiv.appendChild(employeeTitle);
         employeeDiv.appendChild(detailsDiv);
 
@@ -74,4 +85,28 @@ function toggleEmployeeDetails(index) {
     } else {
         detailsDiv.style.display = "none";
     }
+}
+
+// Função para excluir um funcionário
+function excluirFuncionario(button) {
+    const employeeDiv = button.parentElement;
+    const employeeList = employeeDiv.parentElement;
+    const index = Array.from(employeeList.children).indexOf(employeeDiv);
+
+    // Remove o funcionário da lista
+    employees.splice(index, 1);
+
+    // Remove o elemento HTML do funcionário
+    employeeDiv.remove();
+}
+
+function buscarFuncionario() {
+    const searchTerm = document.getElementById("search").value.toLowerCase();
+
+    const filteredEmployees = employees.filter((employee) => {
+        return employee.name.toLowerCase().includes(searchTerm);
+    });
+
+    // Atualize a lista de funcionários com os funcionários filtrados
+    displayEmployees(filteredEmployees);
 }
