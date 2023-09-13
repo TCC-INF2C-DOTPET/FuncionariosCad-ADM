@@ -108,6 +108,7 @@ header {
     font-weight: 600;
     transition: all .50s ease;
     color: #ffe600;
+    margin-bottom: 12px;
 }
 
 
@@ -463,7 +464,12 @@ margin-bottom: 15px;
 }
 
 
-
+/* Estilos para o rótulo "Buscar por nome" */
+label[for="search"] {
+    font-size: 16px; /* Tamanho da fonte */
+    color: #ffffff; /* Cor do texto */
+    font-weight: 700; /* Grossura do texto */
+}
 
 
 
