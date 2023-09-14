@@ -95,6 +95,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Função para exibir os funcionários na lista
     function displayEmployees() {
+
+        sortEmployeesByName(); // Chama a função para ordenar os funcionários por nome
+
+
         const employeeList = document.getElementById("employeeList");
         employeeList.innerHTML = ""; // Limpa a lista antes de atualizar
 
@@ -104,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Título do funcionário (nome)
             const employeeTitle = document.createElement("h3");
-            employeeTitle.textContent = "Nome: " + employee.name; // Adicione o nome aqui
+            employeeTitle.textContent = "Func: " + employee.name; // Adicione o nome aqui
             employeeTitle.addEventListener("click", () => {
                 toggleEmployeeDetails(index);
             });
@@ -145,21 +149,29 @@ document.addEventListener("DOMContentLoaded", function () {
 const searchInput = document.getElementById("search");
 searchInput.addEventListener("input", buscarFuncionario);
 
-// Função para buscar funcionários pelo nome
+// Função para buscar funcionarios pelo cpf
 function buscarFuncionario() {
     const searchTerm = document.getElementById("search").value.toLowerCase();
 
     employees.forEach((employee, index) => {
         const employeeDiv = document.querySelectorAll(".employee")[index];
 
-        // Verifica se o nome do funcionário inclui o termo de pesquisa
-        if (employee.name.toLowerCase().includes(searchTerm)) {
+        // Verifica se o cpf do funcionário inclui o termo de pesquisa
+        if (employee.cpf.toLowerCase().includes(searchTerm)) {
             employeeDiv.style.visibility = "visible"; // Torna o funcionário visível
         } else {
             employeeDiv.style.visibility = "hidden"; // Torna o funcionário invisível
         }
     });
 }
+
+
+function sortEmployeesByName() {
+    employees.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+    });
+}
+
 
    // Configurar o evento de clique no botão de adicionar
    const addButton = document.getElementById("addButton");
